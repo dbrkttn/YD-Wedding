@@ -43,13 +43,16 @@ The `Invitation` tab holds the guest list. Row 1 needs the headers `Nama` and `S
 
 In the sheet, choose **Undangan > Buat kode & link tamu**. It adds `Kode` and `Link` columns and gives each named guest a unique code. Run it again after adding guests: existing codes never change, so links you already sent keep working. Use **Undangan > Ubah alamat situs** once the site is published to fill in the links.
 
-A guest link looks like `https://your-site.example/?k=H7K2QM`. The page then shows that guest's name, only their session, a countdown to their session, and a calendar event for it. Their RSVP row records the session.
+A guest link looks like `https://your-site.example/?k=H7K2QM&to=Bapak%20Ahmad`. The name in the link appears on the cover immediately, while the session loads from the sheet in the background (Google's script takes 2–3 seconds to answer). The page then shows only that guest's session, a countdown to it, and a calendar event for it. Their RSVP row records the session.
+
+If you change a guest's name in the sheet, run **Buat kode & link tamu** again and send them the new link: an old link keeps showing the old name.
 
 Other links still work:
 
 | Link | Shows |
 |---|---|
-| `?k=CODE` | Name and session from the guest list |
+| `?k=CODE&to=Name` | The name instantly, the session from the guest list (what the sheet generates) |
+| `?k=CODE` | Name and session from the guest list, after a 2–3 second wait |
 | `?to=Bapak%20Ahmad` | That name, with both sessions |
 | `?to=Name&k=CODE` | The typed name, with the session from the guest list |
 | No parameters, or an unknown code | "Tamu Undangan", with both sessions |

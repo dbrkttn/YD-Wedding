@@ -48,7 +48,6 @@
     isiSesi();
     baris(document.querySelector('[data-isi-tempat]'), cfg.tempat.nama);
 
-    document.title = `Undangan Pernikahan ${cfg.mempelai.wanita.panggilan} & ${cfg.mempelai.pria.panggilan}`;
 
     /* ---------- Tamu: ?k=KODE dari daftar tamu, atau ?to=Nama ---------- */
 

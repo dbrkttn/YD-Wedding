@@ -299,7 +299,8 @@ function buatLinkTamu() {
       tanpaSesi++;
     }
     kolomKode.push([kode]);
-    kolomLink.push([nama && alamat ? alamat + '/?k=' + kode : '']);
+    // The name in the link lets the cover show it instantly; the session still comes from the sheet.
+    kolomLink.push([nama && alamat ? alamat + '/?k=' + kode + '&to=' + encodeURIComponent(nama) : '']);
   });
 
   if (kolomKode.length) {
