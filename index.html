@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="id">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Undangan Pernikahan</title>
+    <meta name="description" content="Undangan pernikahan digital">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="theme-color" content="#3f7d2a">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Great+Vibes&family=La+Belle+Aurore&family=Yellowtail&display=swap">
+    <link rel="preload" as="image" href="assets/photos/cover.webp">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="config.js"></script>
+    <script defer src="js/app.js"></script>
+</head>
+
+<body class="terkunci">
+
+    <!-- Sampul -->
+    <section id="sampul" aria-label="Sampul undangan">
+        <img class="sampul-foto" src="assets/photos/cover.webp" alt="">
+        <div class="sampul-atas">
+            <p class="sampul-judul">THE WEDDING OF</p>
+            <h1 class="sampul-nama"><span data-isi="wanita.panggilan"></span> &amp; <span data-isi="pria.panggilan"></span></h1>
+            <p class="sampul-tanggal" data-isi="tanggalSingkat"></p>
+            <div class="sampul-tamu">
+                <p>Kepada Ykh;<br>Bapak/Ibu/Saudara/Saudari</p>
+                <p class="sampul-tamu-nama" id="nama-tamu">Tamu Undangan</p>
+            </div>
+        </div>
+        <div class="sampul-bawah">
+            <button type="button" class="tombol tombol-gelap" id="buka-undangan">Buka Undangan</button>
+        </div>
+    </section>
+
+        <main id="isi" tabindex="-1">
+
+            <!-- Ayat -->
+            <section class="bagian bagian-ayat muncul">
+                <img class="kaligrafi" src="assets/ornaments/kaligrafi.png" alt="" width="225" height="147">
+                <blockquote class="ayat">
+                    Di antara tanda-tanda (kebesaran)-Nya ialah bahwa Dia menciptakan pasangan-pasangan untukmu dari (jenis) dirimu sendiri agar kamu merasa tenteram kepadanya. Dia menjadikan di antaramu rasa cinta dan kasih sayang. Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda (kebesaran Allah) bagi kaum yang berpikir.
+                    <cite>QS. Ar-Rum: Ayat 21</cite>
+                </blockquote>
+            </section>
+
+            <!-- Surat undangan berbingkai -->
+            <section class="bagian bagian-bingkai muncul">
+                <div class="bingkai">
+                    <img class="sudut sudut-ka" src="assets/ornaments/sudut.png" alt="">
+                    <img class="sudut sudut-kb" src="assets/ornaments/sudut.png" alt="">
+                    <img class="sudut sudut-ba" src="assets/ornaments/sudut.png" alt="">
+                    <img class="sudut sudut-bb" src="assets/ornaments/sudut.png" alt="">
+                    <span class="garis garis-atas"></span>
+                    <span class="garis garis-bawah"></span>
+                    <span class="garis garis-kiri"></span>
+                    <span class="garis garis-kanan"></span>
+
+                    <p class="tebal">Bismillahirrahmanirrahim</p>
+                    <p class="tebal">Assalamualaikum Warahmatullahi Wabarakatuh</p>
+                    <p>Dengan memohon rahmat dan ridho Allah SWT, kami mengundang Bapak/Ibu/Saudara/Saudari dalam resepsi pernikahan putra-putri kami:</p>
+
+                    <h2 class="nama-emas" data-isi="wanita.namaLengkap"></h2>
+                    <p class="tebal rapat" data-isi="wanita.orangTua"></p>
+                    <p class="rapat" data-isi="wanita.asal"></p>
+
+                    <p class="miring">dengan</p>
+
+                    <h2 class="nama-emas" data-isi="pria.namaLengkap"></h2>
+                    <p class="tebal rapat" data-isi="pria.orangTua"></p>
+                    <p class="rapat" data-isi="pria.asal"></p>
+
+                    <p>yang insyaallah akan dilaksanakan pada:</p>
+
+                    <div class="jadwal">
+                        <div class="jadwal-sisi">
+                            <p class="jadwal-judul">Resepsi:</p>
+                            <div data-isi-sesi></div>
+                        </div>
+                        <div class="jadwal-tanggal">
+                            <p class="jadwal-hari" data-isi="hari"></p>
+                            <p class="jadwal-angka" data-isi="tgl"></p>
+                            <p class="jadwal-bulan" data-isi="bulan"></p>
+                            <p class="jadwal-tahun" data-isi="tahun"></p>
+                        </div>
+                        <div class="jadwal-sisi">
+                            <p class="jadwal-judul">Tempat:</p>
+                            <div data-isi-tempat></div>
+                        </div>
+                    </div>
+
+                    <p>Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/Saudari berkenan hadir untuk memberikan doa restu kepada putra-putri kami.</p>
+                    <p class="tebal">Wassalamualaikum Warahmatullahi Wabarakatuh</p>
+                    <p class="berbahagia">Kami yang berbahagia</p>
+                    <div class="keluarga-dua">
+                        <p class="tebal">Keluarga<br><span data-isi="wanita.ayah"></span><br>&amp; <span data-isi="wanita.ibu"></span></p>
+                        <p class="tebal">Keluarga<br><span data-isi="pria.ayah"></span><br>&amp; <span data-isi="pria.ibu"></span></p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Hitung mundur -->
+            <section class="bagian muncul" id="hitung-mundur">
+                <h2 class="judul">Menuju Hari Bahagia</h2>
+                <div class="hitungan" id="hitungan" role="timer">
+                    <div><strong id="hm-hari">00</strong><span>Hari</span></div>
+                    <div><strong id="hm-jam">00</strong><span>Jam</span></div>
+                    <div><strong id="hm-menit">00</strong><span>Menit</span></div>
+                    <div><strong id="hm-detik">00</strong><span>Detik</span></div>
+                </div>
+                <p class="hitungan-selesai" id="hitungan-selesai" hidden>Hari bahagia telah tiba</p>
+                <a class="tombol" id="tautan-kalender" target="_blank" rel="noopener">Simpan ke Google Calendar</a>
+            </section>
+
+            <!-- Lokasi -->
+            <section class="bagian muncul" id="lokasi">
+                <h2 class="judul">Denah Lokasi</h2>
+                <div class="peta" id="peta"></div>
+                <p class="lokasi-nama" data-isi="tempatSatuBaris"></p>
+                <a class="tombol" id="tautan-maps" target="_blank" rel="noopener">Buka Google Maps</a>
+            </section>
+
+            <!-- Galeri -->
+            <section class="bagian muncul" id="galeri" aria-label="Galeri">
+                <blockquote class="kutipan">
+                    <p>For small creatures such as we, the vastness is bearable only through love</p>
+                    <cite>~ Carl Sagan</cite>
+                </blockquote>
+                <div class="karusel" id="karusel" role="group" aria-roledescription="carousel" aria-label="Galeri foto">
+                    <div class="karusel-jendela">
+                        <div class="karusel-jalur" id="karusel-jalur"></div>
+                    </div>
+                    <button type="button" class="karusel-geser karusel-kiri" id="karusel-sebelum" aria-label="Foto sebelumnya">&#8249;</button>
+                    <button type="button" class="karusel-geser karusel-kanan" id="karusel-berikut" aria-label="Foto berikutnya">&#8250;</button>
+                </div>
+                <div class="karusel-titik" id="karusel-titik"></div>
+            </section>
+
+            <!-- RSVP dan ucapan -->
+            <section class="bagian muncul" id="rsvp">
+                <h2 class="judul">Konfirmasi Kehadiran</h2>
+                <p class="catatan-contoh" id="catatan-contoh" hidden>Mode contoh: formulir belum tersambung ke Google Sheet, jadi data belum tersimpan.</p>
+
+                <form id="form-rsvp" novalidate>
+                    <label for="rsvp-nama">Nama</label>
+                    <input id="rsvp-nama" name="nama" type="text" maxlength="60" autocomplete="name" required>
+
+                    <fieldset>
+                        <legend>Kehadiran</legend>
+                        <label class="pilihan"><input type="radio" name="kehadiran" value="Hadir" required> Insyaallah hadir</label>
+                        <label class="pilihan"><input type="radio" name="kehadiran" value="Tidak Hadir"> Berhalangan hadir</label>
+                    </fieldset>
+
+                    <div id="baris-jumlah">
+                        <label for="rsvp-jumlah">Jumlah tamu</label>
+                        <select id="rsvp-jumlah" name="jumlah">
+                            <option value="1">1 orang</option>
+                            <option value="2">2 orang</option>
+                            <option value="3">3 orang</option>
+                            <option value="4">4 orang</option>
+                            <option value="5">5 orang</option>
+                        </select>
+                    </div>
+
+                    <label for="rsvp-ucapan">Ucapan dan doa <span class="opsional">(opsional)</span></label>
+                    <textarea id="rsvp-ucapan" name="ucapan" rows="4" maxlength="500"></textarea>
+
+                    <!-- Jebakan bot: tidak terlihat oleh tamu -->
+                    <div class="jebakan" aria-hidden="true">
+                        <label for="rsvp-situs">Situs</label>
+                        <input id="rsvp-situs" name="situs" type="text" tabindex="-1" autocomplete="off">
+                    </div>
+
+                    <button type="submit" class="tombol tombol-gelap" id="rsvp-kirim">Kirim</button>
+                    <p class="status" id="rsvp-status" role="status"></p>
+                </form>
+
+                <h2 class="judul judul-ucapan">Ucapan &amp; Doa</h2>
+                <div id="daftar-ucapan" aria-live="polite"></div>
+                <button type="button" class="tombol" id="ucapan-lagi" hidden>Lihat ucapan lainnya</button>
+            </section>
+
+        </main>
+
+    <!-- Tombol musik -->
+    <button type="button" id="tombol-musik" aria-label="Jeda musik" aria-pressed="true" hidden>
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M9 18.5a3 3 0 1 1-2-2.83V5.5l12-2.5v12.5a3 3 0 1 1-2-2.83V7.45L9 9.12z" /></svg>
+    </button>
+
+    <!-- Foto besar -->
+    <dialog id="kotak-foto" aria-label="Foto">
+        <button type="button" class="kotak-tutup" id="foto-tutup" aria-label="Tutup">&times;</button>
+        <button type="button" class="kotak-geser kotak-kiri" id="foto-sebelum" aria-label="Foto sebelumnya">&#8249;</button>
+        <img id="foto-besar" alt="">
+        <button type="button" class="kotak-geser kotak-kanan" id="foto-berikut" aria-label="Foto berikutnya">&#8250;</button>
+    </dialog>
+</body>
+
+</html>
