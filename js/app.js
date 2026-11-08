@@ -278,12 +278,37 @@
         return tombol;
     };
 
+    // Banyak foto: penghitung "3 / 18" menggantikan titik yang tidak muat di layar ponsel.
+    const pakaiPenghitung = jumlahFoto > 8;
+    const penghitung = document.createElement('p');
+    penghitung.className = 'karusel-penghitung';
+
+    // Foto dimuat menjelang tampil: yang aktif, sebelum, dan dua sesudahnya.
+    let fotoBolehDimuat = false;
+    const muatSekitar = (aktif) => {
+        if (!fotoBolehDimuat) {
+            return;
+        }
+        const slide = Array.from(jalur.children);
+        [aktif - 1, aktif, aktif + 1, aktif + 2].forEach((i) => {
+            const nomor = (i + jumlahFoto) % jumlahFoto;
+            [slide[nomor], nomor === 0 ? slide[jumlahFoto] : null].forEach((s) => {
+                s?.querySelectorAll('img[data-src]').forEach((img) => {
+                    img.src = img.dataset.src;
+                    img.removeAttribute('data-src');
+                });
+            });
+        });
+    };
+
     const setPosisi = (baru, animasi) => {
         posisi = baru;
         jalur.style.transition = animasi ? '' : 'none';
         jalur.style.transform = `translateX(${-posisi * 100}%)`;
 
         const aktif = posisi % jumlahFoto;
+        muatSekitar(aktif);
+        penghitung.textContent = `${aktif + 1} / ${jumlahFoto}`;
         titik.forEach((t, i) => t.setAttribute('aria-current', String(i === aktif)));
         Array.from(jalur.children).slice(0, jumlahFoto).forEach((slide, i) => {
             slide.tabIndex = i === aktif ? 0 : -1;
@@ -329,8 +354,15 @@
         mulaiPewaktuKarusel();
     };
 
+    if (pakaiPenghitung) {
+        $('karusel-titik').appendChild(penghitung);
+    }
+
     cfg.galeri.forEach((foto, i) => {
         jalur.appendChild(buatSlide(foto, i, false));
+        if (pakaiPenghitung) {
+            return;
+        }
 
         const tombolTitik = document.createElement('button');
         tombolTitik.type = 'button';
@@ -422,11 +454,11 @@
     jalur.addEventListener('pointerup', selesaiGeser);
     jalur.addEventListener('pointercancel', selesaiGeser);
 
-    // Foto dimuat saat galeri hampir terlihat, dan pewaktu hanya berjalan saat terlihat.
-    const muatFotoKarusel = () => jalur.querySelectorAll('img[data-src]').forEach((img) => {
-        img.src = img.dataset.src;
-        img.removeAttribute('data-src');
-    });
+    // Foto mulai dimuat saat galeri hampir terlihat, dan pewaktu hanya berjalan saat terlihat.
+    const muatFotoKarusel = () => {
+        fotoBolehDimuat = true;
+        muatSekitar(posisi % jumlahFoto);
+    };
 
     if ('IntersectionObserver' in window) {
         new IntersectionObserver((daftar, pengamat) => {
@@ -635,4 +667,32 @@
 
     muatTamu();
     muatUcapan();
+
+    /* ---------- Layar muat: hilang setelah sampul benar-benar siap ---------- */
+
+    const fotoSampul = document.querySelector('.sampul-foto');
+    const fotoSiap = fotoSampul.complete
+        ? Promise.resolve()
+        : new Promise((siap) => {
+            fotoSampul.addEventListener('load', siap, { once: true });
+            fotoSampul.addEventListener('error', siap, { once: true });
+        });
+    const hurufSiap = document.fonts
+        ? Promise.all([
+            '600 1em Barlow', '400 1em Barlow', '1em Yellowtail',
+        ].map((h) => document.fonts.load(h).catch(() => null)))
+        : Promise.resolve();
+
+    Promise.race([
+        Promise.all([fotoSiap, hurufSiap]),
+        new Promise((selesai) => setTimeout(selesai, 5000)),
+    ]).then(() => {
+        // Halaman lama dari cache mungkin belum punya layar muat.
+        const muat = $('muat');
+        if (!muat) {
+            return;
+        }
+        muat.classList.add('selesai');
+        setTimeout(() => muat.remove(), 600);
+    });
 })();

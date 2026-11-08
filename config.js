@@ -51,13 +51,26 @@ window.UNDANGAN = {
     // Kosongkan ('') jika tidak ingin memakai musik.
     musik: 'assets/musik.mp3',
 
+    // Urutan di sini = urutan di galeri. Sumber asli ada di folder "Galeri".
     galeri: [
-        { src: 'assets/photos/galeri-1.webp', alt: 'Kedua mempelai duduk di atas rumput' },
-        { src: 'assets/photos/galeri-2.webp', alt: 'Mempelai wanita memegang buket mawar merah' },
-        { src: 'assets/photos/galeri-3.webp', alt: 'Mempelai pria duduk di atas rumput' },
-        { src: 'assets/photos/galeri-4.webp', alt: 'Mempelai wanita tersenyum di taman' },
-        { src: 'assets/photos/galeri-5.webp', alt: 'Mempelai pria di taman' },
-        { src: 'assets/photos/galeri-6.webp', alt: 'Kedua mempelai bergandengan tangan' },
+        { src: 'assets/photos/galeri/01.webp', alt: 'Bersulang dengan dua gelas' },
+        { src: 'assets/photos/galeri/02.webp', alt: 'Berbaring sambil memegang potongan jeruk' },
+        { src: 'assets/photos/galeri/03.webp', alt: 'Piknik berdua di atas rumput' },
+        { src: 'assets/photos/galeri/04.webp', alt: 'Bergandengan tangan sambil duduk di rumput' },
+        { src: 'assets/photos/galeri/05.webp', alt: 'Saling menatap dan tersenyum' },
+        { src: 'assets/photos/galeri/06.webp', alt: 'Wajah berdua dari dekat' },
+        { src: 'assets/photos/galeri/07.webp', alt: 'Berdiri di taman dengan buket mawar merah' },
+        { src: 'assets/photos/galeri/08.webp', alt: 'Berjalan bergandengan di bawah pepohonan' },
+        { src: 'assets/photos/galeri/09.webp', alt: 'Duduk berdua di taman berhias lampu' },
+        { src: 'assets/photos/galeri/10.webp', alt: 'Berpose di depan dinding gelap' },
+        { src: 'assets/photos/galeri/11.webp', alt: 'Bersama buket bunga di ruangan berdinding kayu' },
+        { src: 'assets/photos/galeri/12.webp', alt: 'Berfoto di kebun binatang' },
+        { src: 'assets/photos/galeri/13.webp', alt: 'Mendaki gunung' },
+        { src: 'assets/photos/galeri/14.webp', alt: 'Swafoto di tepi danau' },
+        { src: 'assets/photos/galeri/15.webp', alt: 'Swafoto di depan air terjun' },
+        { src: 'assets/photos/galeri/16.webp', alt: 'Empat foto dari photobooth' },
+        { src: 'assets/photos/galeri/17.webp', alt: 'Swafoto di depan candi' },
+        { src: 'assets/photos/galeri/18.webp', alt: 'Swafoto di kafe' },
     ],
 
     // Tempel URL Web App dari Google Apps Script di sini (lihat README.md).

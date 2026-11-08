@@ -28,6 +28,48 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Great+Vibes&family=La+Belle+Aurore&family=Yellowtail&display=swap">
     <link rel="preload" as="image" href="assets/photos/cover.webp">
+
+    <!-- Layar muat: tampil seketika, sebelum CSS, foto, dan huruf selesai dimuat. -->
+    <style>
+        /* Jangan beri latar pada html: latar body (dan ornamen di belakangnya) bisa tertutup. */
+        #muat {
+            position: fixed;
+            inset: 0;
+            z-index: 100;
+            display: grid;
+            place-items: center;
+            background: #f5f9ec;
+            transition: opacity 0.5s ease;
+        }
+
+        #muat.selesai {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        #muat span {
+            width: 28px;
+            height: 28px;
+            border: 2px solid rgba(201, 162, 39, 0.25);
+            border-top-color: #c9a227;
+            border-radius: 50%;
+            animation: putar-muat 0.9s linear infinite;
+        }
+
+        @keyframes putar-muat {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+    <noscript>
+        <style>
+            #muat {
+                display: none;
+            }
+        </style>
+    </noscript>
+
     <link rel="stylesheet" href="css/style.css">
 
     <script src="config.js"></script>
@@ -35,6 +77,12 @@
 </head>
 
 <body class="terkunci">
+
+    <div id="muat" aria-hidden="true"><span></span></div>
+    <script>
+        // Cadangan: layar muat tidak pernah tertahan lebih dari 6 detik.
+        setTimeout(() => document.getElementById('muat')?.classList.add('selesai'), 6000);
+    </script>
 
     <!-- Sampul -->
     <section id="sampul" aria-label="Sampul undangan">

@@ -689,6 +689,15 @@ main {
     background: var(--tinta);
 }
 
+.karusel-penghitung {
+    min-height: 32px;
+    padding-top: 6px;
+    font-family: var(--huruf-label);
+    font-size: 0.875rem;
+    letter-spacing: 0.08em;
+    font-variant-numeric: tabular-nums;
+}
+
 #kotak-foto {
     width: 100%;
     max-width: 100%;
