@@ -192,7 +192,7 @@
         waktuAcara = waktuPada(mulai);
         perbaruiHitungan();
         buatKalender(mulai, selesai,
-            `Resepsi sesi ${nomor}: ${cfg.resepsi.sesi[nomor - 1]} ${cfg.labelZona}.`);
+            `${cfg.resepsi.sesi[nomor - 1]} ${cfg.labelZona}`);
     };
 
     /* ---------- Peta: dimuat saat hampir terlihat ---------- */
