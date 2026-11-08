@@ -444,17 +444,16 @@ main {
     white-space: pre-line;
 }
 
-/* Di layar kecil, kolom mengikuti isinya agar nama tempat tetap satu baris. */
+/* Di layar kecil, tanggal tetap di tengah; isi kiri dan kanan yang menyesuaikan (boleh pindah baris). */
 @media (max-width: 459px) {
     .jadwal {
-        grid-template-columns: auto auto auto;
-        justify-content: center;
         font-size: 0.6875rem;
         letter-spacing: 0.02em;
     }
 
     .jadwal-sisi {
         padding: 0 3px;
+        text-wrap: balance;
     }
 
     .jadwal-tanggal {
