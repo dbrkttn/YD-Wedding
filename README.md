@@ -59,6 +59,10 @@ Other links still work:
 
 To move a guest to another session, change their `Session` value. Their existing link picks it up. Deleting a row disables that guest's link, and they see both sessions instead.
 
+## Publishing changes
+
+The site is on GitHub Pages, which lets browsers reuse files for up to 10 minutes. After changing `css/style.css`, `js/app.js` or `config.js`, bump the `?v=` value on their tags in `index.html` so guests get the new files straight away.
+
 ## Before going live
 
 - Connect the Google Sheet. The demo wishes disappear once `rsvpUrl` is set.
